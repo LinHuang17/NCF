@@ -1,1 +1,97 @@
-<h1>Hello!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-84629802-4"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-84629802-4');
+	</script>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="keywords" content="EPOS, 6D object pose, pose estimation, symmetry" />
+
+	<title>EPOS: Estimating 6D Pose of Objects with Symmetries</title>
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+
+<nav class="navbar">
+	<div class="title">
+		<h1>EPOS: Estimating 6D Pose of Objects with Symmetries</h1>
+		<p class="authors">
+		<a href="http://www.hodan.xyz">Tomáš Hodaň</a>&nbsp;&nbsp;&nbsp;
+		<a href="http://web.eee.sztaki.hu/~dbarath/">Dániel Baráth</a>&nbsp;&nbsp;&nbsp;
+		<a href="http://cmp.felk.cvut.cz/~matas/">Jiří Matas</a>
+		</p>
+	</div>
+
+    <div class="logos">
+		<a href="http://www.fel.cvut.cz/en/"><img src="img/ctu_logo_gray.png" alt="Czech Technical University in Prague" /></a>
+		<a href="https://www.sztaki.hu/en/"><img src="img/mta_sztaki_logo.png" alt="Hungarian Academy of Sciences" /></a>
+	</div>
+
+	<div class="end"></div>
+</nav>
+
+<div class="block pub_links">
+	<a href="http://openaccess.thecvf.com/content_CVPR_2020/papers/Hodan_EPOS_Estimating_6D_Pose_of_Objects_With_Symmetries_CVPR_2020_paper.pdf" class="pub_link">PAPER</a>
+	<a href="https://github.com/thodan/epos" class="pub_link">CODE</a>
+	<a href="https://www.youtube.com/watch?v=OXjG0YPqLnE" class="pub_link">VIDEO</a>
+	<a href="https://www.youtube.com/watch?v=7YOfcayv67w" class="pub_link">DEMO</a>
+	<a href="http://cmp.felk.cvut.cz/~hodanto2/data/hodan2020epos.bib" class="pub_link">BIB</a>
+	<span class="published_at">Published at <a href="http://cvpr2020.thecvf.com/">CVPR 2020</a></span>
+	<div class="end"></div>
+</div>
+
+<div class="block block_with_video">
+	<h2 id="abstract">Abstract</h2>
+	<p>
+	EPOS is a new method for estimating the 6D pose of rigid objects with available 3D models from a single RGB input image. The method is applicable to a broad range of objects, including challenging ones with global or partial symmetries.
+	</p>
+	<p>
+	An object is represented by a set of compact surface fragments which allows handling symmetries in a systematic manner. Correspondences between densely sampled pixels and the fragments are predicted by an encoder-decoder network. At each pixel, the network predicts: (i) the probability of each object's presence, (ii) the probability of the fragments given the object's presence, and (iii) the precise 3D location on each fragment. A data-dependent number of corresponding 3D locations is selected per pixel, and poses of possibly multiple object instances are estimated by an efficient variant of the PnP-RANSAC algorithm.
+	</p>
+	<p>
+	In the <a href="https://bop.felk.cvut.cz/challenges/bop-challenge-2019/">BOP Challenge 2019</a>, the method outperforms all RGB and most RGB-D and D methods on the T-LESS and LM-O datasets. On the YCB-V dataset, it is superior to all competitors, with a large margin over the second-best RGB method.
+	</p>
+
+	<div class="embedded_video">
+		<iframe width="650" height="500" src="https://www.youtube.com/embed/OXjG0YPqLnE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+<div class="block">
+	<h2 id="code">Code and pre-trained models</h2>
+	<p>Code and models evaluated in the <a href="http://openaccess.thecvf.com/content_CVPR_2020/papers/Hodan_EPOS_Estimating_6D_Pose_of_Objects_With_Symmetries_CVPR_2020_paper.pdf">CVPR 2020 paper</a> and in the <a href="https://arxiv.org/pdf/2009.07378.pdf">BOP Challenge 2020</a> are available on <a href="https://github.com/thodan/epos">GitHub</a>.</p>
+</div>
+
+<div class="block">
+	<h2 id="demo">Real-world demo</h2>
+	<p>EPOS was applied frame by frame (no temporal consistency was enforced) to a video of YCB objects captured by a cell phone. The RGB input image is on the left and the 3D object models rendered in the estimated 6D poses on the right. All pose estimates with at least 100 inlier correspondences are shown. Each pose estimate is annotated with the object ID and the number of inlier correspondences.</p>
+	
+	<div class="embedded_video">
+		<iframe width="800" height="300" src="https://www.youtube.com/embed/7YOfcayv67w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
+
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
