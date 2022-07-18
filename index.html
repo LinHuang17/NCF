@@ -66,10 +66,10 @@
 <div class="block block_with_video">
 	<h2 id="abstract">Abstract</h2>
 	<p>
-		We propose a new method for estimating the 6DoF pose of a rigid object with a known 3D model from a single RGB image. Unlike classical correspondence-based methods which predict 3D object coordinates at pixels, the proposed method predicts the 3D object coordinates at 3D query points sampled in camera space.
+	We propose a new method for estimating the 6DoF pose of a rigid object with a known 3D model from a single RGB image. Unlike classical correspondence-based methods which predict 3D object coordinates at pixels, the proposed method predicts the 3D object coordinates at 3D query points sampled in camera space. The move from pixels to 3D points, which is inspired by recent PIFu-style methods for 3D reconstruction, enables reasoning about the whole object, including its (self-)occluded parts. 
 	</p>
 	<p>
-		The move from pixels to 3D points, which is inspired by recent PIFu-style methods for 3D reconstruction, enables reasoning about the whole object, including its (self-)occluded parts. The 3D-3D correspondences are predicted by a neural network which for a 3D query point and associated image features predicts (i) the signed distance to the object surface, and (ii) the corresponding 3D object coordinates, with the latter defined only for query points in the surface vicinity. We call the mapping realized by this network as Neural Correspondence Field. The object pose is robustly estimated from the predicted correspondences by the Kabsch-RANSAC algorithm.
+	The 3D-3D correspondences are predicted by a neural network which for a 3D query point and associated image features predicts (i) the signed distance to the object surface, and (ii) the corresponding 3D object coordinates, with the latter defined only for query points in the surface vicinity. We call the mapping realized by this network as Neural Correspondence Field. The object pose is robustly estimated from the predicted correspondences by the Kabsch-RANSAC algorithm.
 	</p>
 	<p>
 	The proposed method achieves the state-of-the-art results on three BOP datasets and is shown superior especially in challenging cases with occlusion.
